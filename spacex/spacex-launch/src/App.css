@@ -1,0 +1,150 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #111111;
+  color: white;
+}
+
+.loading-progress {
+  display: inline-block;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.navigation-header {
+  font-weight: 300;
+  margin-left: 1em;
+}
+
+.navigation__menu {
+  display: flex;
+}
+
+.navigation__container {
+  display: flex;
+  justify-content: space-evenly;
+  background: #293241;
+  color: white;
+
+}
+
+.navigation__options {
+  padding: 15px;
+  margin-right: 1em;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.main-container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.launch-container {
+  margin-top: 100px;
+}
+
+.mission-container {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.mission--header {
+  margin-left: 40px;
+}
+
+.mission-details {
+  display: flex;
+  background-color: rgba(53,134,255,0.22);
+}
+
+.mission-description {
+  display: flex;
+  background-color: rgba(117,172,255,0.1);
+  justify-content: space-between;
+  height: 190px;
+  align-items: center;
+
+}
+
+.mission-patch {
+  width: 250px;
+  text-align: center;
+  margin: auto;
+}
+
+.patch {
+  margin-top: 5px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+.launch--details {
+  max-width: 550px;
+  margin-right: 40px;
+  line-height: 1.5;
+  font-size: 15px;
+
+}
+
+.flight-details {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.launch--format {
+  margin-left: 40px;
+}
+
+.launch--recap {
+  font-weight: 300;
+}
+
+.flight__number {
+  margin: auto;
+  margin-right: 40px;
+}
+
+.gallery-container {
+  grid-template-columns: repeat(3, 2fr);
+  margin-left: 40px;
+}
+
+.flight-image {
+  height: 25vh;
+  padding: 2px;
+}
+
+.mission-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+}
+
+.mission--details {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.link-images{
+  display: block;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  color: white;
+}
