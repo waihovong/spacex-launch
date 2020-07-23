@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css'
-import { CircularProgress } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import wikipediaLink from '../../src/assets/images/wikipedia.svg'
 import redditLink from '../../src/assets/images/reddit-color.svg'
 import presskitLink from '../../src/assets/images/audit-report-survey.svg'
 import articleLink from '../../src/assets/images/computer-laptop.svg'
+import youtubeLink from '../../src/assets/images/youtube.svg';
+import SpaceX from '../../src/assets/images/SpaceX-Logo.svg';
+import '../App.css'
 
 export default function UpcomingLaunch() {
     const [error, setError] = useState(null)
@@ -19,11 +21,7 @@ export default function UpcomingLaunch() {
                 const data = await response.json();
                 setLaunch(data);
                 setIsLoaded(true);
-                console.log(data);
-                console.log(data.links.wikipedia);
-                console.log(data.links.presskit);
-                console.log(data.links.article);
-                console.log(data.links.reddit.launch);
+                // console.log(data);
             } catch (error) {
                 setIsLoaded(false);
                 setError(error);
@@ -36,12 +34,13 @@ export default function UpcomingLaunch() {
         return <div className="loading-progress"> <CircularProgress color="secondary" /></div>
         } else {
             return (
-            <div className="main-container">
+            <div className="background">
+            <div className="second-container">
                 <div className="launch-container">
                     <div className="mission-details mission-container">
-                        <h1 className="latest__launch launch--recap launch--format">Latest Mission -&nbsp;</h1>
-                        <h1 className="mission__name launch--recap">{launch.name}</h1>
-                        <h3 className="flight__number launch--recap"> Flight Number:  #{launch.flight_number} </h3>
+                        <h2 className="latest__launch launch--recap launch--format">Latest Mission -&nbsp;</h2>
+                        <h2 className="mission__name launch--recap">{launch.name}</h2>
+                        <h3 className="flight__number launch--recap"> Flight: #{launch.flight_number} </h3>
                     </div>
                     <div className="mission-description mission-container">
                         <div className="mission-debrief">
@@ -49,17 +48,22 @@ export default function UpcomingLaunch() {
                         </div>
                         <div className="mission-patch">
                             <div className="seperator">
-                                <img src={launch.links.flickr.original[0]}
+                                <img src={launch.links.patch.small || SpaceX }
                                     className="patch"
                                     alt="mission patch"
                                 />
-                                {launch.links.patch.small}
                             </div>
                         </div>
                         <div className="flight-details">
-                            <p className="flight__date">LAUNCH DATE: {new Date (launch.date_utc).toUTCString()}</p>
-                            <p className="flight__site">LAUNCH SITE: {launch.launchpad}</p>
-                            {launch.cores.map((core,index) => {
+                            <div className="flight__date__realtime">
+                                <p className="flight__format flight__date">LAUNCH DATE </p>
+                                <span className="flight__date">{new Date (launch.date_utc).toDateString()}</span>
+                            </div>
+                            <div className="flight__site__realtime">
+                                <p className="flight__format flight__site">LAUNCH SITE </p>
+                                <span className="flight__site">{launch.launchpad}</span>
+                            </div>
+                            {launch.cores.forEach((core,index) => {
                                 if(core.landing_success) {
                                     return <div key={index}>
                                         <p 
@@ -74,7 +78,7 @@ export default function UpcomingLaunch() {
                         </div>
                     </div>
                     <div className="mission-container">
-                        <h1 className="gallery launch--recap mission--header">Mission Gallery</h1>
+                        <h2 className="gallery launch--recap mission--header">Mission Gallery</h2>
                         <div className="gallery-container">
                         {launch.links.flickr.original.map((gallery,index)=>
                             <a key={index} href={gallery} target="_blank" rel="noopener noreferrer">
@@ -88,7 +92,7 @@ export default function UpcomingLaunch() {
                         </div>
                     </div>
                     <div className="mission-container">
-                        <h1 className="launch--recap mission--header">Mission Details</h1>
+                        <h2 className="launch--recap mission--header">Mission Details</h2>
                         <div className="mission-links">
                             <a  href={launch.links.wikipedia} 
                                 target="_blank"
@@ -133,9 +137,21 @@ export default function UpcomingLaunch() {
                                 />
                                 article
                             </a>
+                            <a  href={launch.links.webcast} 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                alt="webcast"
+                                className="mission--details">
+                                <img src={youtubeLink}
+                                    alt="webcast-replay"
+                                    className="link-images"
+                                />
+                                replay
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

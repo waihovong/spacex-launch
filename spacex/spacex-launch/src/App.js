@@ -1,13 +1,16 @@
 import React from 'react';
-import Navbar from './components/navbar';
-import Upcoming from './components/upcominglaunch';
+import LandingPage from './components/landingpage';
+import UpcomingLaunch from './components/upcominglaunch';
+import FalconHeavy from './components/falconheavy';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Upcoming />
+      <LandingPage />
+      <UpcomingLaunch />
+      <FalconHeavy />
     </div>
   );
 }
