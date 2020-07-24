@@ -12,22 +12,30 @@ export default function UpcomingLaunch() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [launch, setLaunch] = useState([]);
+    const [launchPad, setLaunchPad] = useState([]);
+
     useEffect(() => {
         fetchSpaceX();
         async function fetchSpaceX() {
             try {
             const url = "https://api.spacexdata.com/v4/launches/latest"
+            const url2 = "https://api.spacexdata.com/v4/launchpads"
                 const response = await fetch(url);
+                const response2 = await fetch(url2);
                 const data = await response.json();
+                const data2 = await response2.json();
                 setLaunch(data);
+                setLaunchPad(data2);
                 setIsLoaded(true);
-                // console.log(data);
+                console.log(data);
+                console.log(data2);
             } catch (error) {
                 setIsLoaded(false);
                 setError(error);
             }
         }
     }, []);
+
     if(error) {
         return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
@@ -40,11 +48,12 @@ export default function UpcomingLaunch() {
                     <div className="mission-details mission-container">
                         <h2 className="latest__launch launch--recap launch--format">Latest Mission -&nbsp;</h2>
                         <h2 className="mission__name launch--recap">{launch.name}</h2>
+                        <span className="flight__success">LAUNCH {String(launch.success) ? ' SUCCESSFUL ' : ' FAILED '}</span>
                         <h3 className="flight__number launch--recap"> Flight: #{launch.flight_number} </h3>
                     </div>
                     <div className="mission-description mission-container">
                         <div className="mission-debrief">
-                            <p className="launch--details launch--format"> Details {launch.details} </p>
+                            <p className="launch--details launch--format next-details"> {launch.details} </p>
                         </div>
                         <div className="mission-patch">
                             <div className="seperator">
@@ -61,33 +70,30 @@ export default function UpcomingLaunch() {
                             </div>
                             <div className="flight__site__realtime">
                                 <p className="flight__format flight__site">LAUNCH SITE </p>
-                                <span className="flight__site">{launch.launchpad}</span>
+                                <div className="flight__site">
+                                {launchPad.map((launchP, index) => {
+                                    if(launchP.id === launch.launchpad) {
+                                        return <div key={index} className="flight__site">
+                                                <span>{launchP.full_name}</span>
+                                                </div>
+                                        }
+                                    }
+                                )}
+                                </div>
                             </div>
-                            {launch.cores.forEach((core,index) => {
-                                if(core.landing_success) {
-                                    return <div key={index}>
-                                        <p 
-                                        className="flight__success">
-                                        LANDING SUCCESS: 
-                                        {String(core.landing_success) ? ' Successful ' : ' Failed '}
-                                        </p>
-                                    </div>
-                                }
-                            }
-                            )}
                         </div>
                     </div>
                     <div className="mission-container">
                         <h2 className="gallery launch--recap mission--header">Mission Gallery</h2>
                         <div className="gallery-container">
                         {launch.links.flickr.original.map((gallery,index)=>
-                            <a key={index} href={gallery} target="_blank" rel="noopener noreferrer">
-                                <img key={index}
-                                    src={gallery}
-                                    alt={launch.flight_number}
-                                    className="flight-image"
-                                    />
-                            </a>
+                                <a key={index} href={gallery} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={gallery}
+                                        alt={launch.flight_number}
+                                        className="flight-image"
+                                        />
+                                </a>
                             )}
                         </div>
                     </div>

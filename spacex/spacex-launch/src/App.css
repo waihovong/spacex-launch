@@ -51,14 +51,8 @@ html, body {
 }
 
 .background {
-  /* background: url(../src/assets/images/spacex-falconH2.jpg); */
-  /* background: url(../src/assets/images/spacex-dragon2.jpg); */
-  /* background: url(../src/assets/images/spacex-engine.jpg); */
-  /* background: url(../src/assets/images/spacex-trail.jpg); */
   background: url(../src/assets/images/spacex-timelapse.jpg);
-  /* background: url(../src/assets/images/spacex-timelapse2.jpg); */
-  /* background: url(../src/assets/images/spacex-dragon.jpg); */
-  /* background: url(../src/assets/images/spacex-falconH.jpg); */
+  background: url(../src/assets/images/spacex-trail4.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -131,6 +125,7 @@ html, body {
   background-color: #011627;
   height: 50px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .mission-description {
@@ -155,10 +150,9 @@ html, body {
 }
 
 .launch--details {
-  max-width: 550px;
+  max-width: 620px;
   margin-right: 40px;
   line-height: 1.5;
-  font-size: 15px;
 }
 
 .flight-details {
@@ -172,6 +166,12 @@ html, body {
 .flight__format{
   margin: 0;
   font-weight: 700;
+}
+
+.flight__success {
+  margin-left: 20%;
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
 .flight__date__realtime {
@@ -196,9 +196,16 @@ html, body {
   font-size: 1.125em;
 }
 
+
+
 .gallery-container {
+  /* display: grid; */
   grid-template-columns: repeat(3, 2fr);
   margin-left: 40px;
+}
+
+.gallery {
+  display: grid;
 }
 
 .mission--header {
@@ -261,19 +268,17 @@ html, body {
 .rocket--name {
   text-transform: uppercase;
   color: #fca311;
-  margin-right: 20px;
+  margin: 0px 20px 0px 0px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: 2.8em;
 }
 
-.rocket--name-1 {
-  text-transform: uppercase;
+.rocket--payload {
   color: #fca311;
-  margin-right: 20px;
-}
-
-.rocket--name-2 {
+  font-weight: 700;
   text-transform: uppercase;
-  color: #fca311;
-  margin-right: 20px;
+  font-size: 1em;
 }
 
 .rocket-information {
@@ -282,11 +287,13 @@ html, body {
 
 .overview-container {
   display: flex;
+  padding-top: 5px;
 }
 
 .overview-table {
   padding: 0;
   margin-right: 30px;
+  margin-top: 0px;
 }
 
 .rocket--classification {
@@ -298,14 +305,17 @@ html, body {
 }
 
 .rocket--description {
-  margin: 0px 0px 5px 0px;
+  margin: 0px;
   font-size: 1em;
   font-weight: 600;
+  display: block;
+  max-width: 110px;
 }
 
 .rocket--classification--met {
   display: flex;
   font-size: 32px;
+  letter-spacing: -0.04em;
 }
 
 .rocket--dimensions--met {
@@ -321,6 +331,10 @@ html, body {
   justify-content: flex-start;
 }
 
+.rocket-stages {
+  display: flex;
+}
+
 .engine-description {
   width: 30%;
 }
@@ -331,13 +345,20 @@ html, body {
   margin-bottom: 25px;
 }
 
+.seperator {
+  margin: 0px 25px;
+  line-height: 3.1;
+}
+
 .rocket-header {
   display: flex;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .highlight {
   position: relative;
+  height: 5px;
 }
 
 .highlight:after {
@@ -361,13 +382,14 @@ html, body {
 }
 
 .rocket--text {
+  margin-top: 5px;
   max-width: 92%;
 }
 
 .additional-overview {
   font-weight: 600;
-  margin-right: 15px;
   text-transform: uppercase;
+  font-size: 1em;
 }
 
 .rocket-container {
@@ -378,14 +400,13 @@ html, body {
 }
 
 .rocket-side-containerL {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #011627;
-  padding-left: 8%;
-  padding-top: 12%;
-
+  padding-left: 12%;
 }
 
-.rocket-side-containerL-format {
-}
 .rocket-side-image {
   display: block;
   max-width: 100%;
