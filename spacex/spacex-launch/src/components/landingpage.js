@@ -50,7 +50,7 @@ export default function LandingPage() {
 				<div className="landing-separator">
 				<div className="mission--next mission-container">
 					<div className="next-header upcoming-header">
-						<h3 className="upcoming--launch upcoming--details">UPCOMING LAUNCH</h3>
+						<h3 className="upcoming--launch upcoming--details">UPCOMING MISSION</h3>
 						<h2 className="launch--recap upcoming--launch__name upcoming--details">{nextLaunch.name}</h2>
 					</div>
 				</div>

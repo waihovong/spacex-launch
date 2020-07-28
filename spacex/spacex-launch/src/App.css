@@ -51,12 +51,14 @@ html, body {
 }
 
 .background {
-  background: url(../src/assets/images/spacex-timelapse.jpg);
-  background: url(../src/assets/images/spacex-trail4.jpg);
+  /* background: url(../src/assets/images/spacex-timelapse.jpg); */
+  /* background: url(../src/assets/images/spacex-trail4.jpg); */
+  /* background: url(../src/assets/images/spacex-trail3.jpg); */
+  background-color: black;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 105vh;
+  height: 150vh;
   margin: 0;
 }
 
@@ -95,9 +97,14 @@ html, body {
   font-weight: 800;
 }
 
-.line--format hr{
-  color: white;
-  margin-top: 0;
+hr{
+  display: inline-block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em auto;
+  padding: 0;
+
 }
 
 .next-details {
@@ -121,10 +128,9 @@ html, body {
 }
 
 .mission-details {
-  display: flex;
+  /* display: flex; */
   background-color: #011627;
-  height: 50px;
-  align-items: center;
+  height: 140px;
   justify-content: space-between;
 }
 
@@ -156,12 +162,37 @@ html, body {
 }
 
 .flight-details {
-  width: 25%;
+  /* width: 25%; */
   display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  font-size: 15px;
+  /* flex-direction: column; */
+  /* justify-content: space-evenly; */
+  /* padding-left: 10px; */
+
+  /* font-size: 15px; */
 }
+
+.latest--format--line {
+  border-bottom: 1px solid white;
+  overflow: visible;
+  height: 10px;
+  line-height: 20px;
+  margin: 5px 0 10px 0;
+  width: 90%;
+}
+
+.latest-launch-name {
+  background-color: #011627;
+  display: inline-block;
+  padding: 0 1.5% 0px 0px;
+}
+
+.latest-mission-container {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1em;
+}
+
+.
 
 .flight__format{
   margin: 0;
@@ -169,7 +200,6 @@ html, body {
 }
 
 .flight__success {
-  margin-left: 20%;
   font-size: 0.9em;
   font-weight: 600;
 }
@@ -182,21 +212,17 @@ html, body {
   margin-left: 40px;
 }
 
-.launch--recap {
-  font-weight: 300;
-}
-
 .mission__name {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 3em;
+  margin: 0;
 }
 
 .flight__number {
-  margin: auto;
-  margin-right: 40px;
-  font-size: 1.125em;
+  /* margin: auto; */
+  margin: 0;
+  font-size: 90px;
 }
-
-
 
 .gallery-container {
   /* display: grid; */
@@ -271,7 +297,7 @@ html, body {
   margin: 0px 20px 0px 0px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  font-size: 2.8em;
+  font-size: 2.5em;
 }
 
 .rocket--payload {
@@ -294,6 +320,7 @@ html, body {
   padding: 0;
   margin-right: 30px;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .rocket--classification {
@@ -306,7 +333,7 @@ html, body {
 
 .rocket--description {
   margin: 0px;
-  font-size: 1em;
+  font-size: 0.875em;
   font-weight: 600;
   display: block;
   max-width: 110px;
@@ -407,8 +434,40 @@ html, body {
   padding-left: 12%;
 }
 
+.rocket-side-containerL-format {
+  min-height: 450px;
+  padding-top: 40px;
+}
+
+.overview {
+  margin: 0;
+  letter-spacing: -0.035em;
+}
+
 .rocket-side-image {
   display: block;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  min-height: 100%;
+}
+
+.read-more {
+  display: block;
+  justify-content: space-between;
+}
+
+.read-more-button {
+  padding: 15px;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 40px;
+}
+
+.react-player {
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
 }

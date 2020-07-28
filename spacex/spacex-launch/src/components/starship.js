@@ -39,6 +39,21 @@ export default function UpcomingLaunch() {
                     <div className="rocket-container">
                         <div className="rocket-side-containerL">
                             <div className="rocket-side-containerL-format">
+                                {toggleStatus === 0 && 
+                                <div>
+                                    <h3 className="additional-overview overview">Technical details</h3>
+                                </div>
+                                }
+                                {toggleStatus === 1 &&
+                                <div>
+                                    <h3 className="additional-overview overview">First Stage</h3>
+                                </div>
+                                }
+                                {toggleStatus === 2 &&
+                                <div>
+                                    <h3 className="additional-overview overview">Second Stage</h3>
+                                </div>
+                                }
                                 <h2 className="rocket--name">{rocket.rocket_name}</h2>
                                 <p className="rocket--text next-details">{rocket.description}</p>
                                 <div className="rocket-header">
@@ -89,7 +104,6 @@ export default function UpcomingLaunch() {
                                             </div>
                                     </div>
                                 </div>}
-                            </div>
                             <div className="first-stage-description">
                                 {toggleStatus === 1 &&
                                 <div className="rocket-stages-overview">
@@ -133,6 +147,7 @@ export default function UpcomingLaunch() {
                             {/* <div className="read-more">
                                 <a href={rocket.wikipedia} className="rocket--description mission--details read-more-button">READ MORE</a>
                             </div> */}
+                        </div>
                         </div>
                         <div className="rocket-side-containerR">
                             <img src={starship}

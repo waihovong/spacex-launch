@@ -8,6 +8,8 @@ import youtubeLink from '../../src/assets/images/youtube.svg';
 import SpaceX from '../../src/assets/images/SpaceX-Logo.svg';
 import '../App.css'
 
+import ReactPlayer from 'react-player';
+
 export default function UpcomingLaunch() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
@@ -46,44 +48,65 @@ export default function UpcomingLaunch() {
             <div className="second-container">
                 <div className="launch-container">
                     <div className="mission-details mission-container">
-                        <h2 className="latest__launch launch--recap launch--format">Latest Mission -&nbsp;</h2>
-                        <h2 className="mission__name launch--recap">{launch.name}</h2>
-                        <span className="flight__success">LAUNCH {String(launch.success) ? ' SUCCESSFUL ' : ' FAILED '}</span>
-                        <h3 className="flight__number launch--recap"> Flight: #{launch.flight_number} </h3>
+                        <h3 className="upcoming--details">LATEST MISSION DETAILS</h3>
+                        <div className="latest-mission-container">
+                            <div className="latest--format--line">
+                                <div className="latest-launch-name">
+                                    <h2 className="upcoming--launch__name latest--launch"><span>{launch.name}</span></h2>
+                                </div>
+                            </div>
+                            <div>
+                                <h2 className="flight__number launch--recap">{launch.flight_number} </h2>
+                            </div>
+                        </div>
                     </div>
                     <div className="mission-description mission-container">
-                        <div className="mission-debrief">
+                        {/* <div className="mission-debrief">
                             <p className="launch--details launch--format next-details"> {launch.details} </p>
-                        </div>
-                        <div className="mission-patch">
-                            <div className="seperator">
+                        </div> */}
+                        {/* <div className="mission-patch"> */}
+                            {/* <div className="seperator">
                                 <img src={launch.links.patch.small || SpaceX }
                                     className="patch"
                                     alt="mission patch"
                                 />
-                            </div>
-                        </div>
+                            </div> */}
+                        {/* </div> */}
                         <div className="flight-details">
+                            <div className="flight__success__realtime">
+                                <p className="flight__format flight__success">STATUS</p>
+                                <span className="flight__success">{String(launch.success) ? ' SUCCESSFUL ' : ' FAILED '}</span>
+                            </div>
                             <div className="flight__date__realtime">
                                 <p className="flight__format flight__date">LAUNCH DATE </p>
                                 <span className="flight__date">{new Date (launch.date_utc).toDateString()}</span>
                             </div>
-                            <div className="flight__site__realtime">
-                                <p className="flight__format flight__site">LAUNCH SITE </p>
-                                <div className="flight__site">
-                                {launchPad.map((launchP, index) => {
-                                    if(launchP.id === launch.launchpad) {
-                                        return <div key={index} className="flight__site">
-                                                <span>{launchP.full_name}</span>
-                                                </div>
-                                        }
+                        </div>
+                        <div className="flight__site__realtime">
+                            <p className="flight__format flight__site">LAUNCH SITE </p>
+                            <div className="flight__site">
+                            {launchPad.map((launchP, index) => {
+                                if(launchP.id === launch.launchpad) {
+                                    return <div key={index} className="flight__site">
+                                            <span>{launchP.full_name}</span>
+                                            </div>
                                     }
-                                )}
-                                </div>
+                                }
+                            )}
                             </div>
                         </div>
                     </div>
-                    <div className="mission-container">
+                    <div className="mission-container player-wrapper">
+                        <div className="react-player">
+                            <ReactPlayer 
+                                url={launch.links.webcast} 
+                                controls 
+                                width='90vw' 
+                                height='70vh'
+                            />
+                        </div>
+                    </div>
+                    {/* <div className="mission-container">
                         <h2 className="gallery launch--recap mission--header">Mission Gallery</h2>
                         <div className="gallery-container">
                         {launch.links.flickr.original.map((gallery,index)=>
@@ -96,8 +119,8 @@ export default function UpcomingLaunch() {
                                 </a>
                             )}
                         </div>
-                    </div>
-                    <div className="mission-container">
+                    </div> */}
+                    {/* <div className="mission-container">
                         <h2 className="launch--recap mission--header">Mission Details</h2>
                         <div className="mission-links">
                             <a  href={launch.links.wikipedia} 
@@ -155,7 +178,7 @@ export default function UpcomingLaunch() {
                                 replay
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             </div>
