@@ -5,8 +5,9 @@ import redditLink from '../../src/assets/images/reddit-color.svg'
 import presskitLink from '../../src/assets/images/audit-report-survey.svg'
 import articleLink from '../../src/assets/images/computer-laptop.svg'
 import youtubeLink from '../../src/assets/images/youtube.svg';
-import SpaceX from '../../src/assets/images/SpaceX-Logo.svg';
-import falcon from '../../src/assets/images/spacex-falcon9.jpg';
+import MissionPatch from '../../src/assets/images/Group.svg';
+
+
 import '../App.css'
 
 import ReactPlayer from 'react-player';
@@ -35,9 +36,6 @@ export default function UpcomingLaunch() {
                 setLaunchPad(data2);
                 setRockets(data3);
                 setIsLoaded(true);
-                console.log(data);
-                console.log(data2);
-                console.log(data3);
             } catch (error) {
                 setIsLoaded(false);
                 setError(error);
@@ -55,7 +53,7 @@ export default function UpcomingLaunch() {
             <div className="second-container">
                 <div className="launch-container">
                     <div className="mission-details mission-container">
-                        <h3 className="upcoming--details">LATEST MISSION DETAILS</h3>
+                        <h3 className="upcoming--details latest--header">LATEST MISSION DETAILS</h3>
                         <div className="latest-mission-container">
                             <div className="latest--format--line">
                                 <div className="latest-launch-name">
@@ -71,59 +69,104 @@ export default function UpcomingLaunch() {
                         <div className="flight-details">
                             <div className="flight--section flight__success__realtime">
                                 <p className="flight__format flight__success flight--header">STATUS</p>
-                                <span className="flight__success flight__format">{String(launch.success) ? ' SUCCESSFUL ' : ' FAILED '}</span>
+                                <span className={launch.success ? 'status-success statusbar' : 'status-fail statusbar'}>{ (launch.success) ? ' SUCCESSFUL ' : ' FAILURE '}</span>
                             </div>
                             <div className="flight--section flight__date__realtime">
                                 <p className="flight__format flight__date flight--header"> DATE</p>
-                                <span className="flight__date flight__format">{new Date (launch.date_utc).toDateString()}</span>
+                                <span className="flight__date flight__format next-details">{new Date (launch.date_utc).toDateString()}</span>
                             </div>
                             <div className="flight--section flight__date__realtime">
                                 <p className="flight__format flight__date flight--header">ROCKET</p>
                                 <div>
                                     {rockets.map((rocketID, index) => {
                                         if(rocketID.id === launch.rocket) {
-                                            return <div>
-                                                <span className="flight__format">{rocketID.name}</span>
+                                            return <div key={index}>
+                                                <span className="flight__format next-details">{rocketID.name}</span>
                                                 </div>
                                         }
                                     }
                                     )}
                                 </div>
                             </div>
+                            {/* <div className="mission-patch">
+                                <div className="seperator">
+                                    <img src={launch.links.patch.small || MissionPatch }
+                                        className="patch"
+                                        alt="mission patch"
+                                    />
+                                </div>
+                            </div> */}
                         </div>
-                        <div className="flight--section flight__site__realtime">
-                            <p className="flight__format flight__site flight--header">LAUNCH SITE </p>
-                            <div className="flight__site">
-                            {launchPad.map((launchP, index) => {
-                                if(launchP.id === launch.launchpad) {
-                                    return <div key={index} className="flight__site">
-                                            <span className="launch--site">{launchP.full_name}</span>
-                                            </div>
+                        <div className="flight--kit">
+                            <div className="flight--section flight__site__realtime">
+                                <p className="flight__format flight__site flight--header">LAUNCH SITE </p>
+                                <div className="flight__site">
+                                {launchPad.map((launchP, index) => {
+                                    if(launchP.id === launch.launchpad) {
+                                        return <div key={index} className="flight__site">
+                                                <span className="launch--site next-details">{launchP.full_name}</span>
+                                                </div>
+                                        }
                                     }
-                                }
-                            )}
+                                )}
+                                </div>
+                            </div>
+                            <div className="mission-links">
+                                <ul className="mission-navigate-extra">
+                                    <li><a  href={launch.links.wikipedia} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mission--details">
+                                        <img src={wikipediaLink}
+                                            alt="wikipedia"
+                                            className="link-images"
+                                        />
+                                    </a></li>
+                                    <li><a  href={launch.links.presskit} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        alt="presskit"
+                                        className="mission--details">
+                                        <img src={presskitLink}
+                                            alt="press kit"
+                                            className="link-images press-images"
+                                        />
+                                    </a></li>
+                                    <li><a  href={launch.links.reddit.launch} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        alt="reddit-launch"
+                                        className="mission--details">
+                                        <img src={redditLink}
+                                            alt="reddit launch"
+                                            className="link-images"
+                                        />
+                                    </a></li>
+                                    <li><a  href={launch.links.article} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        alt="article"
+                                        className="mission--details">
+                                        <img src={articleLink}
+                                            alt="article"
+                                            className="link-images"
+                                        />
+                                    </a></li>
+                                </ul>
                             </div>
                         </div>
-                        <span className="line--format latest--line"><hr/></span>
+                        <span className="line--format latest--line"></span>
                     </div>
                         <div className="mission-container mission-debrief">
                             <p className="launch--details launch--format next-details"> {launch.details} </p>
                         </div>
-                        {/* <div className="mission-patch">
-                            <div className="seperator">
-                                <img src={launch.links.patch.small || SpaceX }
-                                    className="patch"
-                                    alt="mission patch"
-                                />
-                            </div>
-                        </div> */}
                     <div className="mission-container player-wrapper">
-                        <h3 className="upcoming--details latest-replay">MISSION REPLAY</h3>
+                        <h3 className="upcoming--details latest--header mission--replay">MISSION REPLAY</h3>
                         <div className="launch-container react-player">
                             <ReactPlayer 
                                 url={launch.links.webcast} 
                                 controls 
-                                width='100vw' 
+                                width='100vh' 
                                 height='60vh'
                             />
                         </div>
@@ -142,65 +185,6 @@ export default function UpcomingLaunch() {
                         </div>
                         <span className="underline"><hr /></span>
                     </div>
-                    {/* <div className="mission-container">
-                        <h2 className="launch--recap mission--header">Mission Details</h2>
-                        <div className="mission-links">
-                            <a  href={launch.links.wikipedia} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mission--details">
-                                <img src={wikipediaLink}
-                                    alt="wikipedia"
-                                    className="link-images"
-                                />
-                                wikipedia
-                            </a>
-                            <a  href={launch.links.presskit} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                alt="presskit"
-                                className="mission--details">
-                                <img src={presskitLink}
-                                    alt="press kit"
-                                    className="link-images"
-                                />
-                                presskit
-                            </a>
-                            <a  href={launch.links.reddit.launch} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                alt="reddit-launch"
-                                className="mission--details">
-                                <img src={redditLink}
-                                    alt="reddit launch"
-                                    className="link-images"
-                                />
-                                reddit launch
-                            </a>
-                            <a  href={launch.links.article} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                alt="article"
-                                className="mission--details">
-                                <img src={articleLink}
-                                    alt="article"
-                                    className="link-images"
-                                />
-                                article
-                            </a>
-                            <a  href={launch.links.webcast} 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                alt="webcast"
-                                className="mission--details">
-                                <img src={youtubeLink}
-                                    alt="webcast-replay"
-                                    className="link-images"
-                                />
-                                replay
-                            </a>
-                        </div>
-                    </div> */}
                 </div>
             </div>
             </div>

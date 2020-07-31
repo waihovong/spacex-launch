@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SpaceX from '../../src/assets/images/SpaceX-Logo.svg';
 import Headroom from 'react-headroom';
+import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import "../App.css";
 
 export default function LandingPage() {
@@ -32,20 +34,6 @@ export default function LandingPage() {
 		<div className="landing-container">
 			<div>
 				<div className="navigation-bar">
-					<Headroom>
-					<div className="navigation__container">
-						<img src={SpaceX}
-							alt="spacex logo"
-							className="navigation-header"
-							/>
-						<ul className="navigation__menu">
-							<li className="navigation__options">LAUNCHES</li>
-							<li className="navigation__options">RECOVERY</li>
-							<li className="navigation__options">MISSIONS</li>
-							<li className="navigation__options">CORES</li>
-						</ul>
-					</div>
-					</Headroom>
 				</div>
 				<div className="landing-separator">
 				<div className="mission--next mission-container">

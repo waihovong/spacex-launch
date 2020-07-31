@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background: #111111;
+  background: rgb(7,7,7);
   color: white;
 }
 
@@ -25,36 +25,34 @@ html, body {
   display: flex;
 }
 
-.navigation__container {
+.navigation-container {
+  
+  width: 100%;
+  box-shadow: rgba(0,0,0,0.5) 0px 5px 20px 0px;
+}
+
+.navigation-container-inner {
   display: flex;
   justify-content: space-between;
-  color: white;
 }
+
 
 .navigation__options {
   padding: 15px;
-  margin-right: 3em;
+  margin-right: 1em;
   font-size: 1em;
   text-decoration: none;
   list-style-type: none;
   font-weight: 600;
-}
-
-
-.headroom--scrolled {
-  background-color: rgba(0,0,0,0.2);
+  color: white;
 }
 
 .main-container {
-  max-width: 1600px;
+  max-width: 1420px;
   margin: auto;
 }
 
 .background {
-  /* background: url(../src/assets/images/spacex-timelapse.jpg); */
-  /* background: url(../src/assets/images/spacex-trail4.jpg); */
-  /* background: url(../src/assets/images/spacex-trail3.jpg); */
-  background-color: black;
   background-color: rgb(7,7,7);
   background-size: cover;
   background-position: center center;
@@ -63,6 +61,37 @@ html, body {
   margin: 0;
 }
 
+.previous-background {
+  background: url(../src/assets/images/spacex-engine.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 40vh;
+  box-shadow: inset 0px 0px 400px 100px rgba(0,0,0,0.43);
+  margin-bottom: 67px;
+}
+
+.container-header-title {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.container-inner {
+  display: inline-block;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.headroom--scrolled {
+  background-color: rgb(7,7,7);
+
+}
+
+.header-inner {
+  font-size: 100px;
+  font-weight: 600;
+}
 .second-container {
   padding-top: 50px;
 }
@@ -110,6 +139,11 @@ html, body {
   margin-top: 0;
 }
 
+.latest--line {
+  border-top: 1px solid rgb(80,80,80);
+  margin-top: 0;
+}
+
 .upcoming--details {
   font-size: 1em;
   margin-top: 0.5em;
@@ -132,17 +166,9 @@ html, body {
   flex-direction: column;
 }
 
-.mission-patch {
-  width: 250px;
-  text-align: center;
-  margin: auto;
-}
 
 .patch {
-  margin-top: 5px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  height: 120px;
 }
 
 .launch--details {
@@ -157,8 +183,18 @@ html, body {
   margin-right: 50px;
 }
 
+.flight--kit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seperator {
+  margin: 0px 25px;
+  line-height: 3.1;
+}
+
 .latest--format--line {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid rgb(80,80,80);
   overflow: visible;
   height: 10px;
   line-height: 20px;
@@ -179,19 +215,29 @@ html, body {
   line-height: 1em;
 }
 
-.latest--line {
-  margin-top: 25px;
+.latest--header {
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.mission--replay {
+  text-align: center;
 }
 
 .flight__format{
   margin: 0;
   text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+.flight__success {
+  padding-bottom: 10px;
 }
 
 .flight--header {
   font-size: 0.9em;
-  letter-spacing: -0.028em;
   color: #AFAFAF;
+  font-weight: 700
 }
 
 .flight__date__realtime {
@@ -208,6 +254,7 @@ html, body {
   margin: auto;
   margin: 0;
   font-size: 90px;
+  font-weight: 300;
 }
 
 .gallery-container {
@@ -236,18 +283,28 @@ img {
   width: 100%;
   height: 1px;
   border: 0;
-  background-image: linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.75), rgba(255,255,255,0.15));
+  background-image: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,0.75), rgba(255,255,255,0.05));
 }
 
 .mission-links {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  padding-bottom: 50px;
   font-weight: 700;
   font-size: 14px;
 }
 
+.mission-navigate-extra ul {
+  font-size: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.mission-navigate-extra li {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 25px;
+}
 .mission--details {
   display: block;
   text-decoration: none;
@@ -259,12 +316,12 @@ img {
 
 .link-images{
   display: block;
-  margin: auto;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 15px;
-  padding-top: 15px;
-  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.link-images img {
+  display: block;
 }
 
 .landing-container {
@@ -282,6 +339,11 @@ img {
   font-weight: bolder;
   margin: 0;
   letter-spacing: -0.025em;
+}
+
+.latest--launch {
+  font-size: 3em;
+  font-weight: 400;
 }
 
 .rocket--name {
@@ -363,11 +425,6 @@ img {
   position: absolute;
   cursor: pointer;
   margin-bottom: 25px;
-}
-
-.seperator {
-  margin: 0px 25px;
-  line-height: 3.1;
 }
 
 .rocket-header {
@@ -453,14 +510,96 @@ img {
   padding: 15px;
 }
 
-.player-wrapper {
-  position: relative;
-  padding-top: 40px;
-}
-
 .react-player {
   display: flex;
-  top: 0;
-  left: 0;
   justify-content: center;
+}
+
+.previous-launch-container {
+  padding-bottom: 25px;
+  margin-bottom: 45px;
+  border-bottom: 1px solid rgb(60,60,60);
+}
+
+.previous-upper-container {
+  display: grid;
+  grid-template-columns: 250px 260px 200px 100px;
+  grid-template-columns: 25% 20% 20% 10%;
+  justify-content: end;
+  margin-bottom: 5px;
+}
+
+.previous-lower-container {
+  display: grid;
+  grid-template-columns: 30px 150px 680px;
+  grid-template-columns: 8% 15% 75%;
+  justify-content: space-around;
+}
+
+.previous-launch-flightnumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.previous-flightnumber {
+  font-size: 3em;
+}
+
+.previous--format {
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.previous-launch-mission-patch {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.previous-right-container {
+  display: grid;
+  align-items: center;
+}
+
+.previous-launch-details {
+  display: inline-block;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+}
+
+.previous--name {
+  font-size: 2em;
+}
+
+.previous-launch-status {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.statusbar {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 15px;  
+}
+
+.status-fail {
+  color: #fd2d2d;
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.status-success {
+  color: #30fd2d;
+  border: 2px solid rgb(0, 255, 42);
+}
+
+.previous--more {
+  color: rgb(0, 150, 255);
+  font-size: 0.95em;
+  font-weight: 800;
+  text-decoration: none;
+
 }
