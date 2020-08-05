@@ -33,7 +33,7 @@ function App() {
 									<Link to="/missions" className="navigation__options">MISSIONS</Link>
 								</li>
 								<li className="navigation__options">
-									<Link to='/launch' className="navigation__options">ROCKETS</Link>
+									<Link to='/rocket' className="navigation__options">ROCKETS</Link>
 								</li>
 							</ul>
 						</div>
@@ -43,7 +43,7 @@ function App() {
 					<Route path='/missions'>
 						< PreviousLaunch />
 					</Route>
-					<Route path='/launch' exact component={LatestLaunch}></Route>
+					<Route path='/rocket' exact component={Falconnine}></Route>
 					<Route path='/launch/:id' component={Launch}></Route>
 						{/* < Falconnine /> */}
 						{/* < FalconHeavy /> */}
