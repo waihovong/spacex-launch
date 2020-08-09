@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@ html, body {
   width: 100%;
   background: rgb(7,7,7);
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
 .loading-progress {
@@ -30,23 +32,25 @@ html, body {
 .navigation-container {
   width: 100%;
   box-shadow: rgba(0,0,0,0.5) 0px 5px 20px 0px;
+  /* position: relative; */
 }
 
 .navigation-container-inner {
   display: flex;
   justify-content: space-between;
+  /* position: fixed; */
 }
 
 
 .navigation__options {
   display: flex;
   justify-content: center;
-  padding: 5px;
-  margin-right: 2.5em;
-  font-size: 1em;
+  padding-top: 5px;
+  margin-right: 1.1em;
+  font-size: 0.95em;
   text-decoration: none;
   list-style-type: none;
-  font-weight: 600;
+  font-weight: bolder;
   color: white;
 }
 
@@ -59,15 +63,14 @@ html, body {
   background-color: rgb(7,7,7);
   background-size: cover;
   background-position: center center;
-epeat: no-repeat;
   height: 150vh;
   margin: 0;
 }
 
 .previous-background {
-  background: url(../src/assets/images/spacex-engine.jpg);
+  background: url(../src/assets/images/spacex-timelapse.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: 100% 80%;
   background-repeat: no-repeat;
   height: 40vh;
   box-shadow: inset 0px 0px 400px 100px rgba(0,0,0,0.43);
@@ -90,10 +93,7 @@ epeat: no-repeat;
   background-color: rgb(7,7,7);
 }
 
-.header-inner {
-  font-size: 100px;
-  font-weight: 600;
-}
+
 .second-container {
   padding-top: 50px;
 }
@@ -372,7 +372,6 @@ img {
 .landing-container {
   background: url(../src/assets/images/spacex-landingF.jpg);
   background-size: cover;
-  max-height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -382,9 +381,23 @@ img {
 .falcon-background {
   background: url(../src/assets/images/spacex-falcon9-2.jpg);
   background-size: cover;
-  /* background-position: center center; */
   background-position: 100% 100%;
-  /* background-position: 5px 50%; */
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.falconH-background {
+  background: url(../src/assets/images/spacex-falconH2.jpg);
+  background-size: cover;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.starship-background {
+  background: url(../src/assets/images/spacex-starship.jpg);
+  background-size: cover;
+  background-position: 100% 60%;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -439,7 +452,8 @@ img {
   margin-top: 15px;
   padding: 0;
   font-size: 15px;
-
+  font-weight: bolder;
+  color: hsla(0, 1%, 83%, 0.918);
 }
 
 .rocket--classification--met {
@@ -453,13 +467,16 @@ img {
   justify-content: flex-start;
 }
 
-.falcon--header {
-  color: #fca311;
-  padding-top: 30vh;
-  padding-right: 600px;
+.header-inner {
+  font-size: 5.25em;
+  letter-spacing: -1px;
+  font-weight: 900;
+  padding-top: 50px;
 }
 
-.shadow-button {
+.vehicle--header {
+  padding-top: 30vh;
+  letter-spacing: 1.9px;
 }
 
 .read-button {
@@ -467,7 +484,7 @@ img {
   border-radius: 2px;
   border: 0;
   color: #eee;
-  background-color: #fca311;
+  background-color: #ee9300;
   cursor: pointer;
   outline: none;
   font-size: 14px;
@@ -572,7 +589,7 @@ img {
 }
 
 .rocket--technical {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .rocket-overview-format {
@@ -592,7 +609,7 @@ img {
 
 .rocket-side-image {
   display: block;
-  height: 700px;
+  height: 680px;
   margin: 0 auto;
 }
 
@@ -638,7 +655,7 @@ img {
 }
 
 .previous-flightnumber {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .previous--format {

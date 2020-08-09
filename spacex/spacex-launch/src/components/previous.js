@@ -92,7 +92,7 @@ export default function UpcomingLaunch() {
                                         </div>
                                         <div className="previous-lower-container">
                                             <div className="previous-launch-flightnumber">
-                                                <span className="flight--number--format">#</span><span className="previous--format previous-flightnumber">{prev.flight_number}</span>
+                                                <span className="flight--number--format"></span><span className="previous--format previous-flightnumber">{prev.flight_number}</span>
                                             </div>
                                             <div className="previous-launch-mission-patch">
                                                 <img src={prev.links.patch.small || null }

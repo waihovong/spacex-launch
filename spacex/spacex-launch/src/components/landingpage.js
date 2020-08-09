@@ -58,7 +58,7 @@ export default function LandingPage() {
 						<h3 className="upcoming--launch upcoming--details">{new Date (nextLaunch.date_utc).toDateString()}</h3>
 					</div>
 					<hr/>
-					<span className="next-details">{nextLaunch.details}</span>
+					<span className="next-details">{nextLaunch.details ? nextLaunch.details : 'No Mission Details' }</span>
 				</div>
 				</div>
 			</div>

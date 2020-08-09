@@ -33,7 +33,13 @@ function App() {
 									<Link to="/missions" className="navigation__options">MISSIONS</Link>
 								</li>
 								<li className="navigation__options">
-									<Link to='/rockets' className="navigation__options">ROCKETS</Link>
+									<Link to='/rocket/falcon9' className="navigation__options">FALCON 9 </Link>
+								</li>
+								<li className="navigation__options">
+									<Link to='/rocket/falconheavy' className="navigation__options">FALCON HEAVY</Link>
+								</li>
+								<li className="navigation__options">
+									<Link to='/rocket/starship' className="navigation__options">STARSHIP </Link>
 								</li>
 							</ul>
 						</div>
@@ -43,9 +49,13 @@ function App() {
 					<Route path='/missions'>
 						< PreviousLaunch />
 					</Route>
-					<Route path='/rockets'>
+					<Route path='/rocket/falcon9'>
 						< F9 />
+					</Route>
+					<Route path='/rocket/falconheavy'>
 						< FalconHeavy />
+					</Route>
+					<Route path='/rocket/starship'>
 						< Starship />
 					</Route>
 					<Route path='/launch/:id' component={Launch}></Route>

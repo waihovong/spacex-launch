@@ -35,10 +35,10 @@ export default function UpcomingLaunch() {
         } else {
             return (
             <div className="background-rocket">
-                <div className="falcon-background">
+                <div className="falconH-background rocket-background">
                     <div className="container-header-title">
                         <div className="container-inner">
-                            <h2 className="header-inner falcon--header">FALCON 9</h2>
+                            <h2 className="header-inner vehicle--header">FALCON HEAVY</h2>
                         </div>
                     </div>
                     <div className="arrow-down"></div>
