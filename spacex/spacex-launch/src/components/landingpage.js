@@ -33,8 +33,6 @@ export default function LandingPage() {
 	return (
 		<div className="landing-container">
 			<div>
-				<div className="navigation-bar">
-				</div>
 				<div className="landing-separator">
 				<div className="mission--next mission-container">
 					<div className="next-header upcoming-header">

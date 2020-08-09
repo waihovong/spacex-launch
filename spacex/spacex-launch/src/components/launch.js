@@ -170,7 +170,7 @@ export default function UpcomingLaunch({match}) {
                                 <span className="line--format latest--line"></span>
                             </div>
                                 <div className="mission-container mission-debrief">
-                                    <p className="launch--details launch--format next-details"> {launch.details} </p>
+                                    <p className="launch--details launch--format"> {launch.details} </p>
                                 </div>
                             <div className="mission-container player-wrapper">
                                 <h3 className="upcoming--details latest--header mission--replay">MISSION REPLAY</h3>

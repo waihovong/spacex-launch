@@ -6,11 +6,11 @@ import SpaceX from '../src/assets/images/SpaceX-Logo.svg';
 
 import LandingPage from './components/landingpage';
 import LatestLaunch from './components/latestlaunch';
-import Falconnine from './components/falconnine';
-import FalconHeavy from './components/falconheavy';
-import Starship from './components/starship';
+import FalconHeavy from './components/vehicle_falconheavy';
+import Starship from './components/vehicle_starship';
 import PreviousLaunch from './components/previous';
 import Launch from './components/launch';
+import F9 from './components/vehicle_falcon9';
 
 import './App.css';
 
@@ -33,7 +33,7 @@ function App() {
 									<Link to="/missions" className="navigation__options">MISSIONS</Link>
 								</li>
 								<li className="navigation__options">
-									<Link to='/rocket' className="navigation__options">ROCKETS</Link>
+									<Link to='/rockets' className="navigation__options">ROCKETS</Link>
 								</li>
 							</ul>
 						</div>
@@ -43,11 +43,12 @@ function App() {
 					<Route path='/missions'>
 						< PreviousLaunch />
 					</Route>
-					<Route path='/rocket' exact component={Falconnine}></Route>
+					<Route path='/rockets'>
+						< F9 />
+						< FalconHeavy />
+						< Starship />
+					</Route>
 					<Route path='/launch/:id' component={Launch}></Route>
-						{/* < Falconnine /> */}
-						{/* < FalconHeavy /> */}
-						{/* < Starship /> */}
 					<Route path='/'>
 						< LandingPage />
 						< LatestLaunch />
