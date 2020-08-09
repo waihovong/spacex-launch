@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import '../App.css'
-import falcon from '../../src/assets/images/spacex-falcon9-2.jpg';
 
 import falconImage from '../../src/assets/images/falcon9ren.png';
 
@@ -115,10 +114,12 @@ export default function UpcomingLaunch() {
                             </img>
                         </div>
                         <div className="rocket-containerR">
-                            <h3 className='rocket--technical'>TECHNICAL DETAILS</h3>
+                            <div className="technical">
+                                <h3 className='rocket--technical'>TECHNICAL DETAILS</h3>
+                            </div>
                             <div className="overview-container">
                                 <div className="rocket-stages">
-                                    <div className="overview-table-right">
+                                    <div className="overview-table-right format-table-right">
                                         <p className="rocket--description">HEIGHT</p>
                                         <p className="rocket--classification"> <span className="rocket--classification--met">{rocket.height.meters}</span>&nbsp;<span>m</span></p>
                                     </div>

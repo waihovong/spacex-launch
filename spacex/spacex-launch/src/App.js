@@ -63,7 +63,6 @@ function App() {
 						< LandingPage />
 						< LatestLaunch />
 					</Route>
-					{/* <Route path="/launch/:id" component={Launch}></Route> */}
 				</Switch>
 			</Router>
 		</div>

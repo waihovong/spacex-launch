@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SpaceX from '../../src/assets/images/SpaceX-Logo.svg';
-import Headroom from 'react-headroom';
-import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import "../App.css";
 

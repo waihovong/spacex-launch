@@ -422,9 +422,15 @@ img {
   font-size: 2.5em;
 }
 
-.rocket--technical {
+.technical {
+  padding-top: 20px;
+  position: absolute;
   border-bottom: 1px solid #fca311;
-  width: 55%;
+}
+
+.rocket--technical {
+  margin: 0 auto;
+  font-weight: 900;
 }
 
 .rocket--payload {
@@ -502,6 +508,10 @@ img {
 
 .overview-table-right {
   text-align: start;
+}
+
+.format-table-right {
+  padding-top: 50px;
 }
 
 .engine-description {
@@ -588,10 +598,6 @@ img {
   padding-left: 100px;
 }
 
-.rocket--technical {
-  font-weight: 600;
-}
-
 .rocket-overview-format {
   text-align: justify;
 }
@@ -661,6 +667,10 @@ img {
 .previous--format {
   font-weight: 600;
   line-height: 1.7;
+}
+
+.previous--details {
+  font-weight: 400;
 }
 
 .previous-launch-mission-patch {

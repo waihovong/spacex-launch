@@ -4,9 +4,6 @@ import wikipediaLink from '../../src/assets/images/wikipedia.svg'
 import redditLink from '../../src/assets/images/reddit-color.svg'
 import presskitLink from '../../src/assets/images/audit-report-survey.svg'
 import articleLink from '../../src/assets/images/computer-laptop.svg'
-import youtubeLink from '../../src/assets/images/youtube.svg';
-import MissionPatch from '../../src/assets/images/Group.svg';
-
 
 import '../App.css'
 
@@ -30,16 +27,19 @@ export default function UpcomingLaunch({match}) {
             const url = `https://api.spacexdata.com/v4/launches/${match.params.id}`
             const url2 = "https://api.spacexdata.com/v4/launchpads"
             const url3 = "https://api.spacexdata.com/v4/rockets"
+            
                 const response = await fetch(url);
-                const response2 = await fetch(url2);
-                const response3 = await fetch(url3);
                 const data = await response.json();
-                const data2 = await response2.json();
-                const data3 = await response3.json();
                 setLaunch(data);
+
+                const response2 = await fetch(url2);
+                const data2 = await response2.json();
                 setLaunchPad(data2);
+
+                const response3 = await fetch(url3);
+                const data3 = await response3.json();
                 setRockets(data3);
-                console.log('launch id', data);
+
                 setIsLoaded(true);
             } catch (error) {
                 setIsLoaded(false);

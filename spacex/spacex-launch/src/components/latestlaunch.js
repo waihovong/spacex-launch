@@ -4,9 +4,6 @@ import wikipediaLink from '../../src/assets/images/wikipedia.svg'
 import redditLink from '../../src/assets/images/reddit-color.svg'
 import presskitLink from '../../src/assets/images/audit-report-survey.svg'
 import articleLink from '../../src/assets/images/computer-laptop.svg'
-import youtubeLink from '../../src/assets/images/youtube.svg';
-import MissionPatch from '../../src/assets/images/Group.svg';
-
 
 import '../App.css'
 
@@ -88,14 +85,6 @@ export default function UpcomingLaunch() {
                                     )}
                                 </div>
                             </div>
-                            {/* <div className="mission-patch">
-                                <div className="seperator">
-                                    <img src={launch.links.patch.small || MissionPatch }
-                                        className="patch"
-                                        alt="mission patch"
-                                    />
-                                </div>
-                            </div> */}
                         </div>
                         <div className="flight--kit">
                             <div className="flight--section flight__site__realtime">

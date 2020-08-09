@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import  { Router, Route, Link } from 'react-router-dom';
+import  { Link } from 'react-router-dom';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -33,7 +33,6 @@ export default function UpcomingLaunch() {
             setRockets(data3);
 
             setIsLoaded(true);
-            // console.log(data);
             } catch (error) {
                 setIsLoaded(false);
                 setError(error);
@@ -109,7 +108,7 @@ export default function UpcomingLaunch() {
                                                     <span className="previous--format previous--name">{prev.name}</span>
                                                 </div>
                                                 <div className="previous-launch-details">
-                                                    <span className="previous--format">{prev.details ? prev.details : 'No Mission Details'}</span>
+                                                    <span className="previous--format previous--details">{prev.details ? prev.details : 'No Mission Details'}</span>
                                                 </div>
                                             </div>
                                         </div>
