@@ -387,9 +387,9 @@ img {
 }
 
 .falconH-background {
-  background: url(../src/assets/images/spacex-falconH2.jpg);
+  background: url(../src/assets/images/spacex-falconH-2.jpg);
   background-size: cover;
-  background-position: 100% 100%;
+  background-position: 100% 20%;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -505,7 +505,7 @@ button, button::after {
   padding: 0;
 }
 
-.read-button span {
+.read-button span{
   position: relative;
   display: inline-block;
   font-size: 14px;
@@ -519,15 +519,16 @@ button, button::after {
   border: 2px solid rgb(218, 219, 219);
 }
 
+.read-button:hover {
+  border-color: #fca311;
+  color: #000;
+}
+
 button::before, button::after {
   background: #fca311;
   content: '';
   position: absolute;
   z-index: -1;
-}
-
-.button:hover {
-  color: #fff;
 }
 
 .read-button::after {
