@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Link } from 'react-router-dom';
 
 import '../App.css'
 
@@ -56,8 +57,8 @@ export default function UpcomingLaunch() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="button-format">
-                                        <button className="read-button">
-                                            Read more
+                                        <button className="read-button hover-filled-opacity">
+                                            <span>Read More</span>
                                         </button>
                                     </a>
                                 </div>
@@ -72,7 +73,7 @@ export default function UpcomingLaunch() {
                                     {toggleStatus === 0 && 
                                     <div className="rocket-stages">
                                         <div className="overview-table">
-                                            <p className="rocket--description">ENGINES</p>
+                                            <p className="rocket--description rocket--engine">ENGINES</p>
                                             <p className="rocket--classification"><span className="rocket--classification--met">{rocket.first_stage.engines}</span></p>
                                         </div>
                                         <div className="overview-table">
@@ -154,6 +155,21 @@ export default function UpcomingLaunch() {
                                         <p className="rocket--classification"><span className="rocket--classification--met">{rocket.stages}</span></p>
                                     </div>
                                 </div>     
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rocket-container">
+                        <div className="next-button-left">
+                            <div className="read-button next-button">
+                            <Link to={`/rocket/falcon9`}><span>Falcon 9</span></Link>
+                            </div>
+                        </div>
+                        <div className="rocket-containerM read-button next-button">
+                            <Link to={`/rocket/falconheavy`}><span>Falcon Heavy</span></Link>
+                        </div>
+                        <div className="next-button-right">
+                            <div className="read-button next-button">
+                                <Link to={`/rocket/starship`}><span>Starship</span></Link>
                             </div>
                         </div>
                     </div>
