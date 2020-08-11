@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/xlaunch/static/css/main.f27908ed.chunk.css",
+    "main.js": "/xlaunch/static/js/main.aaa3250a.chunk.js",
+    "main.js.map": "/xlaunch/static/js/main.aaa3250a.chunk.js.map",
+    "runtime-main.js": "/xlaunch/static/js/runtime-main.e01d4fc0.js",
+    "runtime-main.js.map": "/xlaunch/static/js/runtime-main.e01d4fc0.js.map",
+    "static/js/2.ceedac16.chunk.js": "/xlaunch/static/js/2.ceedac16.chunk.js",
+    "static/js/2.ceedac16.chunk.js.map": "/xlaunch/static/js/2.ceedac16.chunk.js.map",
+    "index.html": "/xlaunch/index.html",
+    "precache-manifest.d86498369c1d84c091baddc48475cbbe.js": "/xlaunch/precache-manifest.d86498369c1d84c091baddc48475cbbe.js",
+    "service-worker.js": "/xlaunch/service-worker.js",
+    "static/css/main.f27908ed.chunk.css.map": "/xlaunch/static/css/main.f27908ed.chunk.css.map",
+    "static/js/2.ceedac16.chunk.js.LICENSE.txt": "/xlaunch/static/js/2.ceedac16.chunk.js.LICENSE.txt",
+    "static/media/SpaceX-Logo.svg": "/xlaunch/static/media/SpaceX-Logo.53b6b790.svg",
+    "static/media/audit-report-survey.svg": "/xlaunch/static/media/audit-report-survey.ebd973a1.svg",
+    "static/media/computer-laptop.svg": "/xlaunch/static/media/computer-laptop.32104caa.svg",
+    "static/media/falcon9ren.png": "/xlaunch/static/media/falcon9ren.76818ec5.png",
+    "static/media/falconHren.png": "/xlaunch/static/media/falconHren.2ad3bb38.png",
+    "static/media/reddit-color.svg": "/xlaunch/static/media/reddit-color.7829c0b1.svg",
+    "static/media/App.css": "/xlaunch/static/media/spacex-timelapse.cdf2165a.jpg",
+    "static/media/starshipren2.png": "/xlaunch/static/media/starshipren2.98f9fd8d.png",
+    "static/media/wikipedia.svg": "/xlaunch/static/media/wikipedia.245a5c76.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e01d4fc0.js",
+    "static/js/2.ceedac16.chunk.js",
+    "static/css/main.f27908ed.chunk.css",
+    "static/js/main.aaa3250a.chunk.js"
+  ]
+}
