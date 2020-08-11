@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './navbar'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import wikipediaLink from '../../src/assets/images/wikipedia.svg'
 import redditLink from '../../src/assets/images/reddit-color.svg'
@@ -48,6 +49,7 @@ export default function UpcomingLaunch() {
             return (
             <div className="background">
             <div className="second-container">
+                < Navbar />
                 <div className="launch-container">
                     <div className="mission-details mission-container">
                         <h3 className="upcoming--details latest--header">LATEST MISSION DETAILS</h3>

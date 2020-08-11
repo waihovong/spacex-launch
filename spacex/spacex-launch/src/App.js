@@ -4,6 +4,7 @@ import Headroom from 'react-headroom';
 
 import SpaceX from '../src/assets/images/SpaceX-Logo.svg';
 
+import Navbar from './components/navbar';
 import LandingPage from './components/landingpage';
 import LatestLaunch from './components/latestlaunch';
 import FalconHeavy from './components/vehicle_falconheavy';
@@ -19,31 +20,7 @@ function App() {
 		<div className="App">
 			<Router>
 				<Headroom>
-					<div className="navigation-container">
-						<div className="navigation-container-inner">
-							<img src={SpaceX}
-								alt="spacex logo"
-								className="navigation-header"
-							/>
-							<ul className="navigation__menu">
-								<li className="navigation__options">
-									<Link to="/" className="navigation__options">HOME</Link>
-								</li>
-								<li className="navigation__options">
-									<Link to="/missions" className="navigation__options">MISSIONS</Link>
-								</li>
-								<li className="navigation__options">
-									<Link to='/rocket/falcon9' className="navigation__options">FALCON 9 </Link>
-								</li>
-								<li className="navigation__options">
-									<Link to='/rocket/falconheavy' className="navigation__options">FALCON HEAVY</Link>
-								</li>
-								<li className="navigation__options">
-									<Link to='/rocket/starship' className="navigation__options">STARSHIP </Link>
-								</li>
-							</ul>
-						</div>
-					</div>
+					< Navbar />
 				</Headroom>
 				<Switch>
 					<Route path='/missions'>
