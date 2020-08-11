@@ -10,7 +10,7 @@ import '../App.css'
 import ReactPlayer from 'react-player';
 import { useParams } from 'react-router-dom';
 
-export default function UpcomingLaunch({match}) {
+export default function LaunchDetails({match}) {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [launch, setLaunch] = useState([]);

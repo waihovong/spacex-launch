@@ -7,7 +7,7 @@ import '../App.css'
 import falconHeavyImage from '../../src/assets/images/falconHren.png';
 
 
-export default function UpcomingLaunch() {
+export default function VehicleFalconHeavy() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [rocket, setRocket] = useState([]);

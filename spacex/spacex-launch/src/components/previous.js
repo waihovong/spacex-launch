@@ -6,7 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import '../App.css'
 
 
-export default function UpcomingLaunch() {
+export default function PreviousLaunch() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [prevLaunch, setPrevLaunch] = useState([]);

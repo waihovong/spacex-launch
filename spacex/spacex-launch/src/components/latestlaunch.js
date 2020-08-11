@@ -10,7 +10,7 @@ import '../App.css'
 
 import ReactPlayer from 'react-player';
 
-export default function UpcomingLaunch() {
+export default function LatestLaunch() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [launch, setLaunch] = useState([]);

@@ -7,7 +7,7 @@ import '../App.css'
 import starshipImage from '../../src/assets/images/starshipren2.png';
 
 
-export default function UpcomingLaunch() {
+export default function VehicleStarship() {
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false);
     const [rocket, setRocket] = useState([]);
