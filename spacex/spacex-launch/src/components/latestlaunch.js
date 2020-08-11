@@ -49,7 +49,6 @@ export default function UpcomingLaunch() {
             return (
             <div className="background">
             <div className="second-container">
-                < Navbar />
                 <div className="launch-container">
                     <div className="mission-details mission-container">
                         <h3 className="upcoming--details latest--header">LATEST MISSION DETAILS</h3>
