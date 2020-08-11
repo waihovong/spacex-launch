@@ -612,14 +612,6 @@ button::before, button::after {
   padding-top: 3%;
 }
 
-.rocket-side-containerL {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* background-color: #011627; */
-  /* padding-left: 12%; */
-}
-
 .rocket-side-containerL-format {
   min-height: 450px;
   padding-top: 40px;
